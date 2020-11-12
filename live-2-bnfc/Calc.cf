@@ -1,0 +1,8 @@
+-- Arithmetic expression language.
+-- Integers and basic operations: Add Sub Mul Div
+
+EAdd.  Exp ::= Exp "+" Exp;
+ESub.  Exp ::= Exp "-" Exp;
+EMul.  Exp ::= Exp "*" Exp;
+EDiv.  Exp ::= Exp "/" Exp;
+EInt.  Exp ::= Integer;
