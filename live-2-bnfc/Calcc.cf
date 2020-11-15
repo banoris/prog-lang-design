@@ -2,8 +2,14 @@
 
 EAdd. Exp ::= Exp "+" Exp1 ;
 ESub. Exp ::= Exp "-" Exp1 ;
--- Exp1 "*" Exp2 ??? It means left-associative
--- E.g. 2 * 3 / 2, then 2*3 is eval first
+
+{-
+
+Exp1 "*" Exp2 ??? It means left-associative
+E.g. 2 * 3 / 2, then 2*3 is eval first
+
+-}
+
 EMul. Exp1 ::= Exp1 "*" Exp2 ;
 EDiv. Exp1 ::= Exp1 "/" Exp2 ;
 EInt. Exp2 ::= Integer ;
