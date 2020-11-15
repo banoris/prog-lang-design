@@ -6,12 +6,12 @@
 
 # Default goal.
 
-all : Calcc/Test
+all : CalcLec/Test
 
 # Rules for building the parser.
 
-Calcc/ErrM.hs Calcc/Lex.x Calcc/Print.hs Calcc/Par.y Calcc/Test.hs : Calcc.cf
-	bnfc --haskell -d Calcc.cf
+CalcLec/ErrM.hs CalcLec/Lex.x CalcLec/Print.hs CalcLec/Par.y CalcLec/Test.hs : CalcLec.cf
+	bnfc --haskell -d CalcLec.cf
 
 %.hs : %.y
 	happy --ghc --coerce --array --info $<
@@ -19,16 +19,16 @@ Calcc/ErrM.hs Calcc/Lex.x Calcc/Print.hs Calcc/Par.y Calcc/Test.hs : Calcc.cf
 %.hs : %.x
 	alex --ghc $<
 
-Calcc/Test : Calcc/Test.hs Calcc/ErrM.hs Calcc/Lex.hs Calcc/Par.hs Calcc/Print.hs
+CalcLec/Test : CalcLec/Test.hs CalcLec/ErrM.hs CalcLec/Lex.hs CalcLec/Par.hs CalcLec/Print.hs
 	ghc --make $< -o $@
 
 # Rules for cleaning generated files.
 
 clean :
-	-rm -f Calcc/*.hi Calcc/*.o Calcc/*.log Calcc/*.aux Calcc/*.dvi
+	-rm -f CalcLec/*.hi CalcLec/*.o CalcLec/*.log CalcLec/*.aux CalcLec/*.dvi
 
 distclean : clean
-	-rm -f Calcc/Abs.hs Calcc/Abs.hs.bak Calcc/ComposOp.hs Calcc/ComposOp.hs.bak Calcc/Doc.txt Calcc/Doc.txt.bak Calcc/ErrM.hs Calcc/ErrM.hs.bak Calcc/Layout.hs Calcc/Layout.hs.bak Calcc/Lex.x Calcc/Lex.x.bak Calcc/Par.y Calcc/Par.y.bak Calcc/Print.hs Calcc/Print.hs.bak Calcc/SharedString.hs Calcc/SharedString.hs.bak Calcc/Skel.hs Calcc/Skel.hs.bak Calcc/Test.hs Calcc/Test.hs.bak Calcc/XML.hs Calcc/XML.hs.bak Calcc/AST.agda Calcc/AST.agda.bak Calcc/Parser.agda Calcc/Parser.agda.bak Calcc/IOLib.agda Calcc/IOLib.agda.bak Calcc/Main.agda Calcc/Main.agda.bak Calcc/Calcc.dtd Calcc/Calcc.dtd.bak Calcc/Test Calcc/Lex.hs Calcc/Par.hs Calcc/Par.info Calcc/ParData.hs Makefile
-	-rmdir -p Calcc/
+	-rm -f CalcLec/Abs.hs CalcLec/Abs.hs.bak CalcLec/ComposOp.hs CalcLec/ComposOp.hs.bak CalcLec/Doc.txt CalcLec/Doc.txt.bak CalcLec/ErrM.hs CalcLec/ErrM.hs.bak CalcLec/Layout.hs CalcLec/Layout.hs.bak CalcLec/Lex.x CalcLec/Lex.x.bak CalcLec/Par.y CalcLec/Par.y.bak CalcLec/Print.hs CalcLec/Print.hs.bak CalcLec/SharedString.hs CalcLec/SharedString.hs.bak CalcLec/Skel.hs CalcLec/Skel.hs.bak CalcLec/Test.hs CalcLec/Test.hs.bak CalcLec/XML.hs CalcLec/XML.hs.bak CalcLec/AST.agda CalcLec/AST.agda.bak CalcLec/Parser.agda CalcLec/Parser.agda.bak CalcLec/IOLib.agda CalcLec/IOLib.agda.bak CalcLec/Main.agda CalcLec/Main.agda.bak CalcLec/CalcLec.dtd CalcLec/CalcLec.dtd.bak CalcLec/Test CalcLec/Lex.hs CalcLec/Par.hs CalcLec/Par.info CalcLec/ParData.hs Makefile
+	-rmdir -p CalcLec/
 
 # EOF
