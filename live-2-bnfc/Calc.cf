@@ -1,5 +1,6 @@
 -- Arithmetic expression language.
 -- Integers and basic operations: Add Sub Mul Div
+-- WRONG, since no precedence
 
 EAdd.  Exp ::= Exp "+" Exp;
 ESub.  Exp ::= Exp "-" Exp;
